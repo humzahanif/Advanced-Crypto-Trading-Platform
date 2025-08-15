@@ -5,3 +5,9 @@ numpy
 plotly
 requests
 google-generativeai
+datetime
+requests
+json
+time
+typing
+warnings
