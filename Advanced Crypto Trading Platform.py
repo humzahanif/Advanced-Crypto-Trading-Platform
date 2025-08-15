@@ -398,7 +398,7 @@ def main():
                     else:
                         data = CryptoDataAPI.get_yfinance_data(selected_crypto, time_period, interval)
 
-                    if not data.empty:
+                    if data is not None and isinstance(data, pd.DataFrame) and not data.empty:
                         chart = create_price_chart(
                             data,
                             f"{selected_crypto} Price Chart ({selected_interval})",
@@ -887,4 +887,5 @@ def main():
                 st.success("Portfolio reset!")
 
 if __name__ == "__main__":
+
     main()
